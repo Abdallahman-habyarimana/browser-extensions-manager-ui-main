@@ -11,21 +11,25 @@
 :root {
     --bg-main: hsl(217, 61%, 90%);
     --gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
-    --bg-nav: hsl(200, 60%, 99%);
+    --bg-secondary: hsl(200, 60%, 99%);
     --toggle-color: hsl(0, 0%, 93%);
 
     --toggle-hover-color: hsl(0, 0%, 78%);
     --active: hsl(3, 77%, 44%);
 
     --fonts: "Noto Sans";
+    --text-color: hsl(0, 0%, 78%);
     
 }
 
 [data-theme="dark"] {
     --bg-main: hsl(227, 75%, 14%);
      --gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
-    --bg-nav: hsl(226, 11%, 37%);
+    
+     --bg-secondary: hsl(225, 23%, 24%);
     --toggle-color: hsl(226, 11%, 37%);
+
+    --text-color: #fff;
 }
 
 
@@ -48,11 +52,10 @@ ul {
 /* navigation */
 .nav__container {
     width: 95%;
-    background: #fff;
+    background: var(--bg-secondary);
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    background: var(--bg-nav);
     border-radius: 2rem;
     margin: 2rem auto;
 }
@@ -118,10 +121,11 @@ ul {
     margin: 2rem auto;
 }
 
+/* card design*/
 .card {
     border-radius: 1.2rem;
     padding: 1rem;
-    background: #fff;
+    background: var(--bg-secondary);
     display: flex;
     height: 150px;
     flex-direction: column;

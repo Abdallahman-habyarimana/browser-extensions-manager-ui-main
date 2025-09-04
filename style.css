@@ -30,6 +30,7 @@
     --toggle-color: hsl(226, 11%, 37%);
 
     --text-color: #fff;
+    --active: hsl(3, 71%, 56%);
 }
 
 
@@ -76,38 +77,44 @@ ul {
 }
 
 /* filter */
+
+.filterList {
+    padding: .8rem 1.75rem;
+    border-radius: 45%;
+    cursor: pointer;
+}
+
+.filterList.active {
+    background: var(--active);
+    color: var(--text-color);
+    font-size: 1.5rem;
+} 
+
+/* header style */
 .header {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
     gap: 1rem;
-
+    margin: 2rem auto;
 }
 
 .header h2 {
-    margin-left: 3rem;
-    font-size: 3rem;
+    font-size: 3.25rem;
+    margin-left: 2rem;
     font-weight: 700;
 }
 
 .header ul {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 2rem;
+    gap: 2rem;
+    margin: 2rem 4rem;
 }
 
 .filterList {
-    padding: .8rem 1.75rem;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.filterList.active {
-    background: var(--active);
-    color: var(--bg-nav);
-    font-size: 2rem;
+    flex: 1;
+    font-size: 1.5rem;
 }
 
 /*grid*/
@@ -148,12 +155,13 @@ ul {
 .btn {
     background: transparent;
     padding: .75rem;
-    border-radius: 1.5rem;
+    border-radius: 1.7rem;
     cursor: pointer;
+    border: 0.1rem solid #333;
 }
 
 .btn:hover {
-    background: red;
+    background: var(--active);
     color: #fff;
 }
 
@@ -162,7 +170,7 @@ ul {
 .switch {
     position: relative;
     display: inline-block;
-    width: 52px;
+    width: 48px;
     height: 26px;
   }
   
@@ -197,11 +205,11 @@ ul {
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: var(--active);
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px var(--active);
   }
   
   input:checked + .slider:before {
@@ -240,8 +248,16 @@ ul {
 }
 
 @media (min-width: 85em)  {
-  
+  .nav__container {
+    width: 80vw;
+  }
+
+  .header {
+    width: 80vw;
+    
+  }
   .grid {
-        grid-template-columns: repeat(3, minmax(260px, 1fr));
+        width: 80vw;
+        grid-template-columns: repeat(3, minmax(320px, 1fr));
     }
 }
